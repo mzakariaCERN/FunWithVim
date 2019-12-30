@@ -1,0 +1,76 @@
+"MZ curated vim settings
+
+"from https://nvie.com/posts/how-i-boosted-my-vim
+
+"this must be first, because it changes other options as side effect
+set nocompatible
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+" remove backup and swap file
+"set nobackup
+"set noswapfile
+
+" another optino is to have vim save them in a sep directory
+
+"set backup file
+set backup
+
+" tell vim where to put its backup files
+set backupdir=C:\\Users\mkzak
+
+" tell vim where to put swap files
+" This assumes the you made a file called TemForVim under the path below
+set dir=C:\\Users\mkzak\TempForVim
+"t_Co >= 256 || has("gui_running")
+"    colorscheme mustang
+"    endif
+
+ "   if &t_Co > 2 || has("gui_running")
+        " switch syntax highlighting on, when the terminal has colors
+"	    syntax on
+"	    endif
+
+set mouse=a
+
+if has('gui_running')
+  set guifont=Lucida_Console:h18
+    endif
+
+"set indentation  
+set autoindent
+
+"check syntax
+syntax enable  
+
+
+" below are from https://dougblack.io/words/a-good-vimrc.html
+
+" UI Layout {{{
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline        " highlight current line
+set wildmenu
+set lazyredraw
+set showmatch           " higlight matching parenthesis
+""set fillchars+=vert:| "don't know what this deos
+" }}}
+
+colo desert " a color scheme that works.. 
+"colorscheme badwolf         " awesome colorscheme
+
+set tabstop=4       " number of visual spaces per TAB
+
+filetype indent on      " load filetype-specific indent files
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
