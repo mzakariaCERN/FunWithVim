@@ -1,6 +1,29 @@
 "MZ curated vim settings
 
+
+" we put this first to geet pathogen [Pathogyn is not working for me]
+" https://marisks.net/2015/10/14/getting-started-with-vim-on-windows/
+execute pathogen#infect() 
+syntax on
+filetype plugin indent on
 "from https://nvie.com/posts/how-i-boosted-my-vim
+
+call plug#begin('/mnt/c/Users/E125967/vimfiles/plugged')
+" shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'https://tpope.io/vim/fugitive.git'
+
+
+" Initialize plugin system
+ call plug#end()
+"
+"
 
 "this must be first, because it changes other options as side effect
 set nocompatible
@@ -74,3 +97,47 @@ set hlsearch            " highlight matches
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+" to see status bar
+" https://shapeshed.com/vim-statuslines/
+set laststatus=2
+
+
+function! GitInit()
+	return system("git init")
+endfunction
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitInit()	
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+"set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %F "prints file path and \ is an escape before a space separatpr
+set statusline+=%m\
+set statusline+=%{FugitiveStatusline()} " shows current branch on git
+set statusline+=%= "from now all is right alined
+set statusline+=%#CursorColumn# "print curser column
+set statusline+=\ %y "file tye
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\  "separator
+set statusline+=%L "locla lines
+
+"set statusline=2
+"set statusline='helloworld\n'
+"set statusline=
+"set statusline+='helloFrom_gvimrc'
+" print full path
+"set statusline+=%F
+"set statusline=
+"set statusline+=%{StatuslineGit()}
