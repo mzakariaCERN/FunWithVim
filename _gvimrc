@@ -8,7 +8,8 @@ syntax on
 filetype plugin indent on
 "from https://nvie.com/posts/how-i-boosted-my-vim
 
-call plug#begin('/mnt/c/Users/E125967/vimfiles/plugged')
+call plug#begin('/mnt/c/Users/E125967/vimfiles/plugged') "for windows"
+"call plug#begin('~/.vim/plugged') "for limux
 " shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -27,6 +28,8 @@ Plug 'https://tpope.io/vim/fugitive.git'
 
 "this must be first, because it changes other options as side effect
 set nocompatible
+
+set t_Co=256 " to set colors to 256 also needed to change .profile for linux https://vim.fandom.com/wiki/256_colors_in_vim
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
