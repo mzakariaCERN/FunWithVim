@@ -22,12 +22,8 @@ you can find color choices you have
 Vim/vim82/colors/
 ```
 
-
-Installing plugin manager "pathogen"
-
-This worked https://gist.github.com/ianoxley/1496549
-
-I used wget instead of curl
+installing plug manager: 
+https://github.com/junegunn/vim-plug
 
 ## Resources
 
