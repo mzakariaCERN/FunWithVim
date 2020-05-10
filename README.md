@@ -25,6 +25,10 @@ Vim/vim82/colors/
 installing plug manager: 
 https://github.com/junegunn/vim-plug
 
+
+to see current git branch (and to have git control, which i couldn't so far)
+https://github.com/tpope/vim-fugitive
+
 ## Resources
 
 1. And excellent explanation of some great vimrc settings https://dougblack.io/words/a-good-vimrc.html
