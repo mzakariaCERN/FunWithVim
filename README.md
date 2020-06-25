@@ -1,6 +1,6 @@
 # FunWithVim
 
-On my winows machine, I had a problem setting ```_vimrc```. I couldn't change the file. The solution was installing vim outside Program Files (86) to my user name. Then as vim where does it read from
+On my windows machine, I had a problem setting ```_vimrc```. I couldn't change the file. The solution was installing vim outside Program Files (86) to my user name. Then as vim where does it read from
 
 ```
 :version
@@ -31,6 +31,6 @@ https://github.com/tpope/vim-fugitive
 
 ## Resources
 
-1. And excellent explanation of some great vimrc settings https://dougblack.io/words/a-good-vimrc.html
+1. An excellent explanation of some great vimrc settings https://dougblack.io/words/a-good-vimrc.html
 2. Some nice customization https://nvie.com/posts/how-i-boosted-my-vim/
 3. how to color vim (simple without outside packages)
